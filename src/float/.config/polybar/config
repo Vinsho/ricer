@@ -1,0 +1,265 @@
+[colors]
+;My colors are set from .Xresources to match everything else
+bg_color 	= ${xrdb:bg_color}
+fg_color 	= ${xrdb:fg_color}
+alt_bg_color 	= ${xrdb:alt_bg_color}
+alt_fg_color 	= ${xrdb:alt_fg_color}
+
+
+[module/sep]
+type = custom/text
+content = |
+content-foreground = ${colors.fg_color}
+content-padding = 0
+
+[bar/main]
+bottom = false
+height = 2%
+offset-x = 0
+offset-y = 0
+radius = 10.0
+
+override-redirect = true
+
+background = ${colors.bg_color}
+foreground =  ${colors.fg_color}
+
+line-size = 2.5
+line-color = ${colors.alt_fg_color}
+
+border-size = 0
+border-color = ${colors.alt_bg_color}
+
+padding-left = 1
+padding-right = 1 
+
+module-margin-left = 1 
+module-margin-right = 1
+
+font-2 = FontAwesome:fontformat=truetype:size=9;1
+font-0 = monofur:fontformat=truetype:size=11;1
+font-1 = monofur:fontformat=truetype:size=11;1
+font-3 = "Material Icons Round:size=11;4"
+
+wm-restack = i3
+
+[bar/left]
+inherit = bar/main
+offset-x = 2%
+width = 13%
+modules-left = xkeyboard i3
+offset-y = -0.1%
+
+
+[bar/hack]
+; empty bar to achieve the needed space, without this, the modules 'float on top of the windows'
+; You can spot the 1 px sized bar on the left if you insist to try.
+inherit = bar/main
+background = #00000000
+height = 2.5%
+width = 1
+override-redirect = false
+modules-left = i3
+
+[bar/center]
+inherit = bar/main
+offset-x = 44%
+offset-y = -2.1%
+
+width = 12%
+
+modules-center = date 
+
+[bar/right]
+inherit = bar/main
+offset-y = -4.1%
+offset-x = 67%
+
+width = 32%
+
+modules-right = memory sep pulseaudio sep backlight sep network sep battery sep
+
+tray-radius = 10.0
+tray-position = right
+tray-padding = 9
+tray-offset-y = 0%
+tray-offset-x = 0%
+tray-maxsize = 18
+tray-detached = false
+tray-background = ${colors.bg_color}
+
+[module/i3]
+type = internal/i3
+
+label-unfocused-background = ${colors.bg_color}
+label-unfocused-foreground = ${colors.fg_color}
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = ${colors.alt_fg_color}
+
+label-focused = %index%
+label-focused-foreground = ${colors.fg_color}
+label-focused-background = ${colors.bg_color}
+label-focused-underline = ${colors.alt_fg_color}
+label-focused-padding = 2
+
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+label-visible = %index%
+label-visible-underline = ${colors.fg_color}
+label-visible-padding = 2
+
+label-urgent = %index%
+label-urgent-foreground = ${colors.fg_color}
+label-urgent-background = ${colors.bg_color}
+label-urgent-underline = ${colors.alt_fg_color}
+label-urgent-padding = 2
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = "%d/%m/%Y"
+
+time = "%a %b %d, %I:%M:%S %p "
+
+time-alt = %H:%M:%S
+
+radius = 50
+
+format-background = #FF
+format = <label>
+label = %date% %time%
+
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 99
+low-at = 5
+
+format-full-background = ${colors.bg_color}
+format-charging-background = ${colors.bg_color}
+format-charging =<animation-charging> <label-charging>
+
+format-discharging-background = ${colors.bg_color}
+format-discharging = <ramp-capacity> <label-discharging> 
+
+format-full-prefix-foreground = ${colors.bg_color}
+
+format-charing-background = ${colors.bg_color}
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.alt_fg_color}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.alt_fg_color}
+animation-charging-framerate = 750
+
+[settings]
+screenchange-reload = true
+
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+[module/network]
+type = internal/network
+interface = wlp1s0
+
+interface-type = wireless
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 3.0
+
+format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.alt_fg_color}
+
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.alt_fg_color}
+
+format-disconnected = <label-disconnected>
+format-connected = <label-connected>
+
+label-connected = %downspeed:5%
+label-connected-foreground = ${colors.fg_color}
+label-disconnected = 
+label-disconnected-foreground = ${colors.fg_color}
+label-connected-spacing = 0
+label-connected-margin = 0
+format-disonnected-spacing = 0
+
+
+[module/memory]
+type = internal/memory
+
+interval = 3
+
+warn-percentage = 95
+format-prefix = "RAM "
+format-prefix-foreground = ${colors.alt_fg_color}
+format = <label> 
+label = %percentage_used%%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_04_00.6.analog-stereo
+
+format-volume = <ramp-volume> <label-volume>
+label-muted = ""
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
+
+label-padding = 0
+label-volume = %percentage%%
+
+ramp-volume-foreground = ${colors.alt_fg_color}
+label-volume-foreground = ${colors.fg_color}
+
+click-right = pavucontrol
+click-left = pulseaudio-control togmute
+click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1.hdmi-stereo-extra2" next-sink
+scroll-up = pulseaudio-control --volume-max 130 up
+scroll-down = pulseaudio-control --volume-max 130 down
+
+[module/backlight]
+type = internal/backlight
+
+card = amdgpu_bl0
+
+use-actual-brightness = true
+
+enable-scroll = true
+format-prefix = " "
+format-prefix-foreground = ${colors.alt_fg_color}
+format = <label>
+
+padding = 1
+label =  %percentage%%
+label-foreground = ${colors.fg_color}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock

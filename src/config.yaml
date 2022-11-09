@@ -1,0 +1,36 @@
+files:
+  i3_config: .config/i3/config
+  launch_polybar.sh: .config/polybar/launch_polybar.sh
+  polybar_config: .config/polybar/config
+themes:
+  boat:
+    alt_bg_color: '#2b4546'
+    alt_fg_color: '#86b07b'
+    bg_color: '#061416'
+    fg_color: '#bf9d68'
+    image_name: boat.jpg
+    image_path: /home/vinsho/it/arch-rice/src/ricer/wallpapers/boat.jpg
+  cthulhu:
+    alt_bg_color: '#0a191f'
+    alt_fg_color: '#a73b37'
+    bg_color: '#202020'
+    fg_color: '#459499'
+    image_name: cthulhu.webp
+  gruv_box_dark:
+    alt_bg_color: '#32302f'
+    alt_fg_color: '#6aa29d'
+    bg_color: '#282828'
+    fg_color: '#ebdbb2'
+    image_name: cat.jpg
+  pizza:
+    alt_bg_color: '#6c485d'
+    alt_fg_color: '#d8aeb3'
+    bg_color: '#311b2b'
+    fg_color: '#b5bce3'
+    image_name: pizza.jpg
+  samurai_bebop:
+    alt_bg_color: '#32302f'
+    alt_fg_color: '#6aa29d'
+    bg_color: '#282828'
+    fg_color: '#f78196'
+    image_name: wall.png
