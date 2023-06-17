@@ -12,6 +12,7 @@ def parse_args():
         "--display", "-d", help="Shows existing themes", action="store_true"
     )
     parser.add_argument("--image", "-i", type=str, help="Image to make a theme from.")
+    parser.add_argument("--remove", "-r", type=str, help="Remove given theme.")
     parser.add_argument(
         "--save",
         "-s",
@@ -40,3 +41,6 @@ if __name__ == "__main__":
 
         if args.save:
             setter.save_theme(theme_name=args.save, theme=palette)
+
+    elif args.remove:
+        setter.remove_theme(theme_name=args.remove)

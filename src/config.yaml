@@ -16,12 +16,24 @@ themes:
     bg_color: '#202020'
     fg_color: '#459499'
     image_name: cthulhu.webp
+  elephant:
+    alt_bg_color: '#455957'
+    alt_fg_color: '#9e9080'
+    bg_color: '#31393f'
+    fg_color: '#8c8284'
+    image_name: wallpaper.jpg
   gruv_box_dark:
     alt_bg_color: '#32302f'
     alt_fg_color: '#6aa29d'
     bg_color: '#282828'
     fg_color: '#ebdbb2'
     image_name: cat.jpg
+  pink_cloud:
+    alt_bg_color: '#514150'
+    alt_fg_color: '#99bcb6'
+    bg_color: '#222126'
+    fg_color: '#ee9d98'
+    image_name: pink_cloud.jpg
   pizza:
     alt_bg_color: '#6c485d'
     alt_fg_color: '#d8aeb3'
@@ -34,3 +46,9 @@ themes:
     bg_color: '#282828'
     fg_color: '#f78196'
     image_name: wall.png
+  saturn:
+    alt_bg_color: '#1b2421'
+    alt_fg_color: '#788579'
+    bg_color: '#050405'
+    fg_color: '#ebdbb2'
+    image_name: saturn.png

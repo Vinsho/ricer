@@ -39,6 +39,8 @@ class DunstTemplate:
 
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
+    context = ctrl+shift+period
+    
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
