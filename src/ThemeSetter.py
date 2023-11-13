@@ -117,11 +117,10 @@ class ThemeSetter:
 
     def reload_needed(self):
         os.system("xrdb ~/.Xresources")
-        os.system("killall dunst >/dev/null 2>&1")
         os.system(f"{self.home_path}.fehbg")
-        os.system("albert >/dev/null 2>&1")
         os.system("killall xfconfd")
         os.system("xfce4-panel -r")
+        os.system("killall xfce4-notifyd & dunst >/dev/null 2>&1 &")
 
     def add_needed(self, theme):
         self.set_bg_rgba(theme)
