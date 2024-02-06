@@ -26,7 +26,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id "rofi -show combi -combi-modes window#Tab:/home/vinsho/it/scripts/rofi-brave.sh#drun"
 
 # change focus
 bindsym $mod+j focus left
@@ -108,6 +108,7 @@ bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -198,13 +199,13 @@ mode "$monitor_system" {
 }
 
 # Change headphone profile
-bindsym $mod+8 exec notify-send '(c)all (l)isten'; mode "$headphone_profile"
-set $headphone_profile (c)all, (l)isten
-mode "$headphone_profile" {
-  bindsym c exec pactl set-card-profile bluez_card.88_C9_E8_86_EC_A9 headset-head-unit, mode "default"
-  bindsym l exec pactl set-card-profile bluez_card.88_C9_E8_86_EC_A9 a2dp-sink-sbc, mode "default"
-  bindsym Escape mode "default"
-}
+#bindsym $mod+8 exec notify-send '(c)all (l)isten'; mode "$headphone_profile"
+#set $headphone_profile (c)all, (l)isten
+#mode "$headphone_profile" {
+#  bindsym c exec pactl set-card-profile bluez_card.88_C9_E8_86_EC_A9 headset-head-unit, mode "default"
+#  bindsym l exec pactl set-card-profile bluez_card.88_C9_E8_86_EC_A9 a2dp-sink-sbc, mode "default"
+#  bindsym Escape mode "default"
+#}
 
 # Resize window (you can also use the mouse for that)
 

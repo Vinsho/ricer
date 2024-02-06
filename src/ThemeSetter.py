@@ -1,16 +1,7 @@
 import os
 import shutil
 import yaml
-from src.templates import (
-    RofiTemplate,
-    FehbgTemplate,
-    TerminatorTemplate,
-    XresourcesTemplate,
-    DunstTemplate,
-    AlbertTemplate,
-    XfceTemplate,
-    GtkTemplate
-)
+from src.templates import *
 SAVEABLE_PARAMS = ['bg_color', 'fg_color', 'alt_bg_color', 'alt_fg_color', 'image_name']
 
 
@@ -73,7 +64,9 @@ class ThemeSetter:
             XresourcesTemplate,
             DunstTemplate,
             XfceTemplate,
-            GtkTemplate
+            GtkTemplate,
+            ObsidianTemplate,
+            RofiScriptTemplate
         ]:
             content = template.template.format(**theme)
             with open(os.path.join(self.home_path, template.path), "w") as f:
