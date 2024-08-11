@@ -10,6 +10,24 @@ themes:
     fg_color: '#bf9d68'
     image_name: boat.jpg
     image_path: /home/vinsho/it/arch-rice/src/ricer/wallpapers/boat.jpg
+  buttons:
+    alt_bg_color: '#3c2c44'
+    alt_fg_color: '#89d7e7'
+    bg_color: '#1c1c2c'
+    fg_color: '#d8c3c9'
+    image_name: buttons.png
+  catpuccin:
+    alt_bg_color: '#4b414b'
+    alt_fg_color: '#7cc2e2'
+    bg_color: '#242b3c'
+    fg_color: '#daada2'
+    image_name: catpuccin.png
+  cottage:
+    alt_bg_color: '#526f6a'
+    alt_fg_color: '#82d4c6'
+    bg_color: '#172a27'
+    fg_color: '#e7e1bc'
+    image_name: cottage.jpeg
   cthulhu:
     alt_bg_color: '#0a191f'
     alt_fg_color: '#a73b37'
@@ -34,6 +52,18 @@ themes:
     bg_color: '#222126'
     fg_color: '#ee9d98'
     image_name: pink_cloud.jpg
+  pixel_cabin:
+    alt_bg_color: '#2f6252'
+    alt_fg_color: '#6fbfc4'
+    bg_color: '#1c3535'
+    fg_color: '#c4bc77'
+    image_name: pixerl_cabin.jpg
+  pixel_cabin_sunset:
+    alt_bg_color: '#20273d'
+    alt_fg_color: '#72a5d7'
+    bg_color: '#0c0c10'
+    fg_color: '#f3d693'
+    image_name: pixel_cabin_sunset.jpg
   pizza:
     alt_bg_color: '#6c485d'
     alt_fg_color: '#d8aeb3'

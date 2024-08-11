@@ -22,6 +22,7 @@ class RofiTemplate:
         alternate-normal-foreground: @fg;
         selected-normal-background:  @alt-bg;
         selected-normal-foreground:  @alt-fg;
+        terminal: "rofi-sensible-terminal";
     }}
     """
 
@@ -47,7 +48,7 @@ if [ -z "$1" ]; then
     IFS=$'\\t' read -r value1 value2 value3 <<<"$row"
 
     # Switch the values
-    switched_row="<span color='{alt_fg_color}'>$value2</span>\\t$value1"
+    switched_row="<span color='{alt_fg_color}'>$value2</span>\\t<span size='smaller' weight='ultralight'>(${{value3:0:50}})\\t$value1</span>"
 
     echo "$switched_row"
   }}
@@ -72,6 +73,6 @@ else
   if [ "$current_workspace" != "$brave_workspace" ]; then
     i3-msg workspace $brave_workspace >/dev/null
   fi
-  $HOME/miniconda3/bin/bt activate "${{last_part}}" >/dev/null
+  $HOME/miniconda3/bin/bt activate "${{last_part:0:21}}" >/dev/null
 fi
 """

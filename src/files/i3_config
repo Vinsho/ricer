@@ -1,5 +1,6 @@
 set $mod Mod4
 
+
 gaps inner 5
 gaps outer -5
 
@@ -9,10 +10,6 @@ new_window pixel 1
 new_float pixel 1
 
 hide_edge_borders none
-
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
 
 bindsym Print exec flameshot gui
 
@@ -26,13 +23,17 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id "rofi -show combi -combi-modes window#Tab:/home/vinsho/it/scripts/rofi-brave.sh#drun"
+bindsym $mod+d exec --no-startup-id zsh -c "rofi -show combi -combi-modes window#Tab:/home/vinsho/it/scripts/rofi-brave.sh#drun#ssh"
+
+bindsym $mod+e exec --no-startup-id zsh -c "rofimoji"
+exec --no-startup-id greenclip daemon>/dev/null
+bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -40,10 +41,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
@@ -56,7 +57,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+Tab move container to workspace back_and_forth; workspace
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
+bindsym $mod+t split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
@@ -66,7 +67,6 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+s floating toggle
@@ -234,24 +234,27 @@ mode "resize" {
 }
 
 # Autostart applications
-exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
-exec_always --no-startup-id nm-applet
-exec_always --no-startup-id pamac-tray
-exec_always --no-startup-id clipt
-exec_always --no-startup-id killall pulseaudio
-exec_always --no-startup-id pulseaudio
-exec_always --no-startup-id $HOME/.fehbg
-exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf
-exec_always setxkbmap -layout us,sk -option grp:win_space_toggle
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nm-applet
+exec --no-startup-id pamac-tray
+exec --no-startup-id clipt
+exec --no-startup-id killall pulseaudio
+exec --no-startup-id pulseaudio
+exec --no-startup-id $HOME/.fehbg
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
+exec setxkbmap -layout us,sk -option grp:win_space_toggle
+exec --no-startup-id ff-theme-util
+exec --no-startup-id fix_xcursor
 # exec_always --no-startup-id $HOME/.config/polybar/launch_polybar.sh
-exec_always --no-startup-id xfce4-panel
-exec_always --no-startup-id flameshot
-exec_always --no-startup-id blueman-applet
-exec_always --no-startup-id dunst
-exec_always --no-startup-id libinput-gestures-setup start
-exec_always --no-startup-id nohup mons -a -x "/home/vinsho/scripts/mons_script.sh" > /dev/null 2>&1 &
+exec --no-startup-id xfce4-panel
+exec --no-startup-id flameshot
+exec --no-startup-id blueman-applet
+exec --no-startup-id dunst
+exec --no-startup-id libinput-gestures-setup start
+exec --no-startup-id nohup mons -a -x "/home/vinsho/scripts/mons_script.sh" > /dev/null 2>&1 &
+exec --no-startup-id ntpd -qg
+exec_always --no-startup-id xset r rate 250 45
+exec_always --no-startup-id setxkbmap -option caps:swapescape
 
 
 

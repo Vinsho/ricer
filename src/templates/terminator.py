@@ -2,14 +2,20 @@ class TerminatorTemplate:
     path = ".config/terminator/config"
 
     template = """[global_config]
+  cell_height = 1.1
 [keybindings]
 [profiles]
   [[default]]
     background_color = "{bg_color}"
     background_darkness = 0.95
     background_type = transparent
-    cursor_color = "#aaaaaa"
+    cursor_shape = ibeam
+    cursor_fg_color = "#1c3535"
+    cursor_bg_color = "#c4bc77"
+    cursor_color_default = FalsAre you sure?e
     foreground_color = "{fg_color}"
+    use_system_font = False
+    font = JetBrainsMono Nerd Font Light 9
     show_titlebar = False
     show_scrollbar = False
     scrollback_infinite = True
